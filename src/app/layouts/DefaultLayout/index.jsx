@@ -1,4 +1,4 @@
-import { DefaultLayoutHeader } from '../../../widgets/DefaultLayout/ui';
+import { DefaultLayoutHeader } from '../../../widgets/DefaultLayout';
 
 import stl from './index.module.scss';
 
