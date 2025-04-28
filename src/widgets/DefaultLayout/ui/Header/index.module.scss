@@ -1,0 +1,9 @@
+.header {
+    background: var(--header-bg);
+    &__logo {
+        border-radius: 50%;
+        background: var(--header-logo-bg);
+    }
+
+    
+}

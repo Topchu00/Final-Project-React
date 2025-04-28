@@ -1,9 +1,16 @@
 {
     "extends": ["stylelint-config-standard"],
-    "plugins": ["stylelint-order"],
+    "plugins": ["stylelint-order", "stylelint-scss"],
     "rules": {
-        "declaration-no-important": true,
+        "at-rule-no-unknown": null,
+        "function-no-unknown": null,
+        "media-query-no-invalid": true,
+        "scss/at-rule-no-unknown": false,
+        "scss/function-no-unknown": false,
+        "scss/media-feature-value-dollar-variable": null,
+        "declaration-no-important": false,
         "selector-max-type": null,
+
         "rule-empty-line-before": [
             "always-multi-line",
             {
