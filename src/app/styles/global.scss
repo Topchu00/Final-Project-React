@@ -27,6 +27,7 @@ $breakpoints: (
 .container {
     max-width: 1440px;
     margin: 0 auto;
+    padding: 16px 0;
 
     @include mq('desktopWide') {
         max-width: 1200px;
@@ -36,7 +37,7 @@ $breakpoints: (
 
             @include mq('tabletWide') {
                 max-width: 100%;
-                padding: 0 20px;
+                padding: 16px;
             }
         }
     }
