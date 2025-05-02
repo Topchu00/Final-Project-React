@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { mdiPlay, mdiPlaylistPlus } from '@mdi/js';
+import Icon from '@mdi/react';
 
 import { BASE_ASSETS_PATH } from '../../../../../../shared/constants/ApiPath';
 
@@ -12,6 +15,8 @@ const ReleaseCard = ({ item }) => {
         setIsHovered(value);
     };
 
+    console.log(item);
+
     return (
         <div
             className={stl.card}
@@ -24,7 +29,28 @@ const ReleaseCard = ({ item }) => {
                     style={{
                         background: `url(${imagePath}) center / cover no-repeat`,
                     }}
-                ></div>
+                >
+                    <div className={stl.card__content}>
+                        <div className={stl.card__head}>
+                            <h5>{item?.episodes_total} эпизод</h5>
+                        </div>
+                        <div className={stl.card__body}>
+                            <h4>{item?.name?.main}</h4>
+                        </div>
+                        <div className={stl.card__footer}>
+                            <div></div>
+                            <div className={stl.card__footer__actions}>
+                                <NavLink className={stl.card__footer__actions__link} to={'#'}>
+                                    <Icon path={mdiPlay} size={0.75} />
+                                    Смотреть
+                                </NavLink>
+                                <button>
+                                    <Icon path={mdiPlaylistPlus} size={1} color='#ffffff' />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             ) : (
                 <img src={`${BASE_ASSETS_PATH}${item?.poster?.src}`} alt='' />
             )}

@@ -8,7 +8,64 @@
     }
 
     &__wrapper {
-        width: 50px;
-        height: 200px;
+        aspect-ratio: 212/303;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+        background: linear-gradient(rgb(16 16 16 / 85%) 0%, rgb(0 0 0 / 85%) 100%);
+    }
+
+    &__head {
+        background: rgb(255 255 255 / 10%);
+        border-radius: 6px;
+        padding: 8px 16px;
+
+        h5 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--txt-primary);
+        }
+    }
+
+    &__body h4 {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--txt-primary);
+    }
+
+    &__footer {
+        &__actions {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 4px;
+
+            &__link {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                padding: 4px 8px;
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--txt-primary);
+                border-radius: 8px;
+                background: rgb(255 255 255 / 10%);
+            }
+            button {
+                padding: 4px 8px;
+                border-radius: 8px;
+                background: rgb(255 255 255 / 10%);
+                border: none;
+                outline: none;
+            }
+        }
     }
 }
