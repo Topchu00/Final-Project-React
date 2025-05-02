@@ -1,7 +1,14 @@
-import React from 'react';
+import { HomeBanner, HomeReleases } from '../../widgets/Home';
 
 const Home = () => {
-    return <div>Home</div>;
+    return (
+        <div className='container'>
+            <div className='page'>
+                <HomeBanner />
+                <HomeReleases />
+            </div>
+        </div>
+    );
 };
 
 export default Home;

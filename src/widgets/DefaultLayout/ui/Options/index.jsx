@@ -8,8 +8,8 @@ const Options = () => {
     return (
         <ul className={stl.options}>
             {OPTIONS_ITEMS?.map(({ icon, to }, idx) => (
-                <li>
-                    <NavLink key={idx} to={to} className={stl.options__item}>
+                <li key={idx}>
+                    <NavLink to={to} className={stl.options__item}>
                         {icon}
                     </NavLink>
                 </li>
