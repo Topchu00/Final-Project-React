@@ -15,8 +15,6 @@ const ReleaseCard = ({ item }) => {
         setIsHovered(value);
     };
 
-    console.log(item);
-
     return (
         <div
             className={stl.card}
@@ -36,6 +34,13 @@ const ReleaseCard = ({ item }) => {
                         </div>
                         <div className={stl.card__body}>
                             <h4>{item?.name?.main}</h4>
+                            <div className={stl.card__info}>
+                                <p>
+                                    {item?.year} • {item?.season?.description} •{' '}
+                                    {item?.type?.description} • {item?.age_rating.label}
+                                </p>
+                                <p>{item?.genres.map((g) => g.name).join(' • ')}</p>
+                            </div>
                         </div>
                         <div className={stl.card__footer}>
                             <div></div>

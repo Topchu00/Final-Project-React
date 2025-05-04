@@ -1,4 +1,4 @@
-import { HomeBanner, HomeReleases } from '../../widgets/Home';
+import { HomeBanner, HomeReleases, HomeSupport } from '../../widgets/Home';
 
 const Home = () => {
     return (
@@ -6,6 +6,7 @@ const Home = () => {
             <div className='page'>
                 <HomeBanner />
                 <HomeReleases />
+                <HomeSupport />
             </div>
         </div>
     );
