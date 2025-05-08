@@ -4,6 +4,8 @@ import Home from '../../pages/Home';
 import RoutePath from '../../shared/constants/RoutePath';
 import DefaultLayout from '../layouts/DefaultLayout';
 
+import { AuthPagesRoutes } from './pages';
+
 const router = createBrowserRouter([
     {
         path: RoutePath.HOME,
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
             },
         ],
     },
+    ...AuthPagesRoutes,
 ]);
 
 export default router;

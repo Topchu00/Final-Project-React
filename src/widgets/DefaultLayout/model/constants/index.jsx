@@ -37,6 +37,6 @@ export const OPTIONS_ITEMS = [
     },
     {
         icon: <Icon size='18px' path={mdiAccount} />,
-        to: '#',
+        to: RoutePath.AUTH.LOGIN(),
     },
 ];
