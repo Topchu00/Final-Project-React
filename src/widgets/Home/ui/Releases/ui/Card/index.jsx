@@ -43,7 +43,6 @@ const ReleaseCard = ({ item }) => {
                             </div>
                         </div>
                         <div className={stl.card__footer}>
-                            <div></div>
                             <div className={stl.card__footer__actions}>
                                 <NavLink className={stl.card__footer__actions__link} to={'#'}>
                                     <Icon path={mdiPlay} size={0.75} />
