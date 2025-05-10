@@ -1,4 +1,13 @@
-import { HomeBanner, HomeReleases, HomeSupport } from '../../widgets/Home';
+import {
+    HomeBanner,
+    HomeFranchises,
+    HomeGenres,
+    HomeReleases,
+    HomeSchedule,
+    HomeSupport,
+    HomeTorrents,
+    HomeVideos,
+} from '../../widgets/Home';
 
 const Home = () => {
     return (
@@ -7,6 +16,11 @@ const Home = () => {
                 <HomeBanner />
                 <HomeReleases />
                 <HomeSupport />
+                <HomeSchedule />
+                <HomeVideos />
+                <HomeFranchises />
+                <HomeGenres />
+                <HomeTorrents />
             </div>
         </div>
     );

@@ -1,0 +1,10 @@
+.genres {
+    padding: 16px 0;
+}
+
+.genres__wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(194px, 1fr));
+    gap: 16px;
+    padding: 8px 0;
+}

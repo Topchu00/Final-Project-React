@@ -1,39 +1,48 @@
-// src/pages/AnilibriaNow/index.jsx
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
-import ReleaseSchedule from './ui/Card';
+import HomeApi from '../../../../entities/home/model/api';
+import RoutePath from '../../../../shared/constants/RoutePath';
+import SectionTitle from '../../../../shared/ui/SectionTitle';
 
-import stl from './index.module.scss'; // например, сетка карточек
+import ScheduleCard from './ui/Card';
 
-const Schedule = () => {
-    const [releases, setReleases] = useState([]);
+import stl from './index.module.scss';
+
+export const Schedule = () => {
+    const { fetchLatestSchedule } = HomeApi();
+    const [schedule, setSchedule] = useState([]);
 
     useEffect(() => {
-        const fetchNowReleases = async () => {
+        let mounted = true;
+
+        (async () => {
             try {
-                const response = await axios.get('https://anilibria.top/api/v1/anime/schedule/now');
-                const todayData = response.data.today;
+                const raw = await fetchLatestSchedule();
 
-                // Вытаскиваем только release объекты
-                const extractedReleases = todayData.map((item) => item.release);
-
-                setReleases(extractedReleases);
-            } catch (error) {
-                console.error('Ошибка при загрузке данных:', error);
+                if (!mounted) return;
+                setSchedule(Array.isArray(raw.today) ? raw.today : []);
+            } catch (err) {
+                console.error('Не удалось загрузить расписание', err);
             }
-        };
+        })();
 
-        fetchNowReleases();
+        return () => {
+            mounted = false;
+        };
     }, []);
 
     return (
-        <div className={stl.grid}>
-            {releases.map((release) => (
-                <ReleaseSchedule key={release.id} item={release} />
-            ))}
+        <div className={stl.schedule}>
+            <SectionTitle
+                to={RoutePath.CATALOG}
+                title='Расписание релизов'
+                subtitle='Список релизов, над которыми команда трудится прямо сейчас'
+            />
+            <div className={stl.schedule__wrapper}>
+                {schedule.map((item) => (
+                    <ScheduleCard key={item.release.id} episode={item} />
+                ))}
+            </div>
         </div>
     );
 };
-
-export default Schedule;

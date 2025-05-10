@@ -1,0 +1,105 @@
+.card {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    background: #181818;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: filter 0.2s;
+
+    &:hover {
+        filter: brightness(1.05);
+        cursor: pointer;
+    }
+
+    &__imageWrapper {
+        flex: 0 0 165px;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    &__info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+        line-height: 1.2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 34px;
+    }
+
+    &__subtitle {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 10px 0 5px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__meta {
+        display: flex;
+        gap: 8px;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.6);
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+
+    &__footer {
+        flex-shrink: 0;
+        display: flex;
+        gap: 6px;
+        padding-top: 8px;
+        margin-top: auto;
+    }
+
+    &__btnPlay,
+    &__btnOpen {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        font-size: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    &__btnOpen {
+        padding: 4px;
+    }
+}

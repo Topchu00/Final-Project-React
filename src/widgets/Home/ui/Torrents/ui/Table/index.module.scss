@@ -1,0 +1,75 @@
+.table {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+
+    &__info {
+        flex: 1;
+        padding-inline: 16px;
+    }
+
+    &__title {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.2 !important;
+        color: #fff;
+        margin: 0 0 4px;
+    }
+
+    &__episodes,
+    &__tagLine,
+    &__stats,
+    &__meta {
+        font-size: 13px;
+        color: var(--txt-secondary);
+        margin: 2px 0;
+    }
+
+    &__hardsub {
+        background: #2f5a2f;
+        color: #fff;
+        padding: 0 4px;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-left: 4px;
+    }
+
+    &__actions {
+        display: flex; /* обязательно флекс, чтобы кнопки выстроились в ряд */
+        gap: 8px;
+        align-items: center;
+        margin-left: 16px;
+        flex-shrink: 0;
+    }
+
+    &__actions button {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        padding: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s;
+        color: var(--txt-secondary); /* задаём цвет иконок */
+    }
+
+    &__download {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        padding: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s;
+        color: var(--txt-secondary); /* задаём цвет иконок */
+    }
+
+    &__actions button:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    &__download:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+.table + .table {
+    border-top: 1px solid #2e2e2e;
+}

@@ -15,7 +15,7 @@ const HomeApi = () => {
 
     const fetchLatestSchedule = async () => {
         try {
-            const { data } = await axios.get(`${ApiPath.latestSchedule}?limit=4`);
+            const { data } = await axios.get(`${ApiPath.latestSchedule}`);
 
             return data;
         } catch (error) {
@@ -23,9 +23,53 @@ const HomeApi = () => {
         }
     };
 
+    const fetchLatestVideos = async () => {
+        try {
+            const { data } = await axios.get(`${ApiPath.latestVideos}?limit=4`);
+
+            return data;
+        } catch (error) {
+            console.error('Error fetching latest videos:', error);
+        }
+    };
+
+    const fetchLatestFranchises = async () => {
+        try {
+            const { data } = await axios.get(`${ApiPath.latestFranchises}/random?limit=3`);
+
+            return data;
+        } catch (error) {
+            console.error('Error fetching latest franchises:', error);
+        }
+    };
+
+    const fetchGenres = async () => {
+        try {
+            const { data } = await axios.get(`${ApiPath.Genres}/random?limit=6`);
+
+            return data;
+        } catch (error) {
+            console.error('Error fetching genres:', error);
+        }
+    };
+
+    const fetchTorrents = async () => {
+        try {
+            const { data } = await axios.get(`${ApiPath.Torrents}?page=1&limit=5`);
+
+            return data;
+        } catch (error) {
+            console.error('Error fetching torrents:', error);
+        }
+    };
+
     return {
         fetchLatestReleases,
         fetchLatestSchedule,
+        fetchLatestVideos,
+        fetchLatestFranchises,
+        fetchGenres,
+        fetchTorrents,
     };
 };
 

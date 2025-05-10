@@ -1,0 +1,80 @@
+.card {
+    display: flex;
+    width: 467px;
+    height: 220px;
+    background: #181818;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        filter: brightness(1.15);
+        cursor: pointer;
+    }
+  
+    &__imageWrapper {
+      flex: 0 0 165px;
+      overflow: hidden;
+    }
+  
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  
+    &__info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-width: 0;            
+      overflow: hidden;    
+    }
+  
+    &__titles {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+  
+      &__title {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--txt-primary);
+        margin: 0;
+        line-height: 1.2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+  
+      &__subtitle {
+        font-size: 14px;
+        color: var(--txt-secondary);
+        margin: 4px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  
+    &__details {
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+      line-height: 2.0;
+  
+      &__years,
+      &__episodes,
+      &__duration {
+        font-size: 12px;
+        color: var(--txt-secondary);
+      }
+  
+      &__duration {
+        font-size: 10px;
+      }
+    }
+  }
+  

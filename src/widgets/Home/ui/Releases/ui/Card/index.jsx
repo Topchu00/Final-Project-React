@@ -4,6 +4,7 @@ import { mdiPlay, mdiPlaylistPlus } from '@mdi/js';
 import Icon from '@mdi/react';
 
 import { BASE_ASSETS_PATH } from '../../../../../../shared/constants/ApiPath';
+import RoutePath from '../../../../../../shared/constants/RoutePath';
 
 import stl from './index.module.scss';
 
@@ -17,6 +18,7 @@ const ReleaseCard = ({ item }) => {
 
     return (
         <div
+            to={RoutePath.CATALOG}
             className={stl.card}
             onMouseEnter={() => handleMouseChange(true)}
             onMouseLeave={() => handleMouseChange(false)}
@@ -44,7 +46,10 @@ const ReleaseCard = ({ item }) => {
                         </div>
                         <div className={stl.card__footer}>
                             <div className={stl.card__footer__actions}>
-                                <NavLink className={stl.card__footer__actions__link} to={'#'}>
+                                <NavLink
+                                    className={stl.card__footer__actions__link}
+                                    to={RoutePath.CATALOG}
+                                >
                                     <Icon path={mdiPlay} size={0.75} />
                                     Смотреть
                                 </NavLink>
