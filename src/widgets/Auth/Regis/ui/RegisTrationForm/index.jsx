@@ -33,13 +33,8 @@ const RegistrationForm = () => {
         else setShowConfirm(!showConfirm);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // регистрация
-    };
-
     return (
-        <form className={stl.form} onSubmit={handleSubmit}>
+        <form className={stl.form}>
             <NavLink to={RoutePath.HOME}>
                 <img src={MainLogoWhite} alt='Logo' className={stl.logo} />
             </NavLink>

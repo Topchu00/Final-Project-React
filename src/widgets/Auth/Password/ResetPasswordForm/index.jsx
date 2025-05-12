@@ -22,13 +22,9 @@ const ResetPasswordForm = () => {
         else setShowConfirm((v) => !v);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // отправка token, pwd, confirmPwd
-    };
 
     return (
-        <form className={stl.form} onSubmit={handleSubmit}>
+        <form className={stl.form} >
             <NavLink to={RoutePath.AUTH.RESET_PASSWORD()}>
                 <img src={MainLogoWhite} alt='Logo' className={stl.logo} />
             </NavLink>

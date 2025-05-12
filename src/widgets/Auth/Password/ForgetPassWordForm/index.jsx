@@ -13,13 +13,10 @@ import { MainLogoWhite } from '@/app/assets/icons';
 export const ForgotPasswordForm = () => {
     const [email, setEmail] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // отправка email для восстановления
-    };
+
 
     return (
-        <form className={stl.form} onSubmit={handleSubmit}>
+        <form className={stl.form} >
             <NavLink to={RoutePath.HOME}>
                 <img src={MainLogoWhite} alt='Logo' className={stl.logo} />
             </NavLink>

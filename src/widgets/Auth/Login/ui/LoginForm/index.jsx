@@ -18,12 +18,8 @@ const LoginForm = () => {
 
     const togglePwd = () => setShowPwd((prev) => !prev);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
-
     return (
-        <form className={stl.form} onSubmit={handleSubmit}>
+        <form className={stl.form} >
             <NavLink to={RoutePath.HOME}>
                 <img src={MainLogoWhite} alt='Logo' className={stl.logo} />
             </NavLink>

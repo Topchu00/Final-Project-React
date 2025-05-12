@@ -13,13 +13,10 @@ import { MainLogoWhite } from '@/app/assets/icons';
 const EmailVerificationForm = () => {
     const [token, setToken] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // отправка token для подтверждения почты
-    };
+
 
     return (
-        <form className={stl.form} onSubmit={handleSubmit}>
+        <form className={stl.form} >
             <NavLink to={RoutePath.AUTH.EMAIL_VERIFICATION()}>
                 <img src={MainLogoWhite} alt='Logo' className={stl.logo} />
             </NavLink>
