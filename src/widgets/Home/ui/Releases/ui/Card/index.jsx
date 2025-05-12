@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { mdiPlay, mdiPlaylistPlus } from '@mdi/js';
 import Icon from '@mdi/react';
 
@@ -11,14 +11,16 @@ import stl from './index.module.scss';
 const ReleaseCard = ({ item }) => {
     const [isHovered, setIsHovered] = useState(false);
     const imagePath = `${BASE_ASSETS_PATH}${item?.poster?.src}`;
+    const navigate = useNavigate();
 
     const handleMouseChange = (value) => {
         setIsHovered(value);
     };
 
+    const handleClick = () => navigate(RoutePath.CATALOG);
+
     return (
         <div
-            to={RoutePath.CATALOG}
             className={stl.card}
             onMouseEnter={() => handleMouseChange(true)}
             onMouseLeave={() => handleMouseChange(false)}
@@ -29,6 +31,7 @@ const ReleaseCard = ({ item }) => {
                     style={{
                         background: `url(${imagePath}) center / cover no-repeat`,
                     }}
+                    onClick={handleClick}
                 >
                     <div className={stl.card__content}>
                         <div className={stl.card__head}>

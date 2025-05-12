@@ -1,21 +1,11 @@
-.wrapper {
-    align-items: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.text_content {
+.page {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 12px;
+    gap: 48px;
+    align-items: center;
 }
 
-.title {
-    color: var(--txt-primary);
-}
 
-.subtitle {
-    color: var(--txt-secondary);
-    text-align: center;
+.wrapper {
+    padding: 16px 0;
 }

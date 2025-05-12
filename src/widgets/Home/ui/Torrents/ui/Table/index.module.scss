@@ -2,74 +2,106 @@
     display: flex;
     justify-content: space-between;
     padding: 16px;
+    color: var(--txt-secondary);
+
+    & + & {
+        border-top: 1px solid #2e2e2e;
+    }
 
     &__info {
         flex: 1;
         padding-inline: 16px;
-    }
 
-    &__title {
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 1.2 !important;
-        color: #fff;
-        margin: 0 0 4px;
-    }
+        &__title {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--txt-primary);
+            margin: 0 0 4px;
+        }
 
-    &__episodes,
-    &__tagLine,
-    &__stats,
-    &__meta {
-        font-size: 13px;
-        color: var(--txt-secondary);
-        margin: 2px 0;
-    }
+        &__format {
+            display: flex;
+            gap: 12px;
+            align-items: center;
 
-    &__hardsub {
-        background: #2f5a2f;
-        color: #fff;
-        padding: 0 4px;
-        border-radius: 4px;
-        font-size: 12px;
-        margin-left: 4px;
+            &__episodes {
+                font-size: 12px;
+                margin: 2px 0;
+                span {
+                    color: var(--txt-primary);
+                    font-size: 14px;
+                }
+            }
+            &__badges {
+                display: flex;
+                gap: 4px;
+                margin: 2px 0;
+
+                &__badge {
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 3px 10px;
+                    font-size: 12px;
+                    background: rgba(255, 232, 100, 0.1);
+                    color: #ffeb3b;
+                    caret-color: #ffeb3b;
+                    border-radius: 6px;
+                }
+                &__hardsub {
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 3px 10px;
+                    font-size: 12px;
+                    background: rgba(56, 163, 56, 0.1);
+                    color: #4caf50;
+                    caret-color: #4caf50;
+                    border-radius: 6px;
+                }
+            }
+        }
+        &__stats {
+            font-size: 12px;
+            margin: 4px 0;
+            gap: 3px;
+            display: flex;
+            align-items: center !important;
+        }
+        &__meta {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+        &__members {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--txt-secondary);
+            border-radius: 6px;
+        }
     }
 
     &__actions {
-        display: flex; /* обязательно флекс, чтобы кнопки выстроились в ряд */
-        gap: 8px;
+        display: flex;
         align-items: center;
-        margin-left: 16px;
+        gap: 8px;
         flex-shrink: 0;
-    }
 
-    &__actions button {
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        padding: 8px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.2s;
-        color: var(--txt-secondary); /* задаём цвет иконок */
+        button,
+        a {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--txt-secondary);
+            display: flex;
+        }
+        button:hover,
+        a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
     }
-
-    &__download {
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        padding: 8px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.2s;
-        color: var(--txt-secondary); /* задаём цвет иконок */
-    }
-
-    &__actions button:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    &__download:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-}
-.table + .table {
-    border-top: 1px solid #2e2e2e;
 }

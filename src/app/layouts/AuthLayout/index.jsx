@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 
 import { authLayoutBg } from '../../../widgets/AuthLayout/model/constants';
 

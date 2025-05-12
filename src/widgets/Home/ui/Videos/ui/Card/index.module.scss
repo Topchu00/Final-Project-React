@@ -3,7 +3,7 @@
     min-height: 350px;
     display: flex;
     flex-direction: column;
-    background: #181818;
+    background: var( --bg-secondary);
     border-radius: 12px;
     overflow: hidden;
     transition: filter 0.2s;

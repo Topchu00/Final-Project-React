@@ -2,7 +2,7 @@
     display: flex;
     width: 467px;
     height: 220px;
-    background: #181818;
+    background: var( --bg-secondary);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease-in-out;

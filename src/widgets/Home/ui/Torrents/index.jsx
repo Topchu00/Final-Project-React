@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { mdiRss } from '@mdi/js';
+import Icon from '@mdi/react';
 
 import HomeApi from '../../../../entities/home/model/api';
 import RoutePath from '../../../../shared/constants/RoutePath';
@@ -26,11 +28,19 @@ export const Torrents = () => {
 
     return (
         <div className={stl.torrents}>
-            <SectionTitle
-                to={RoutePath.CATALOG}
-                title='Торренты'
-                subtitle='Свежие торренты: озвучка + качество'
-            />
+            <div className={stl.torrents__header}>
+                <SectionTitle
+                    to={RoutePath.CATALOG}
+                    title='Торренты'
+                    subtitle='Свежие торренты: озвучка + качество'
+                />
+                <div className={stl.torrents__icon}>
+                    <button>
+                        <Icon path={mdiRss} size='18px' />
+                        RSS
+                    </button>
+                </div>
+            </div>
             <div className={stl.torrents__wrapper}>
                 {torrents.length > 0 ? (
                     torrents.map((item) => <TorrentsTable key={item.id || item.name} item={item} />)
